@@ -38,17 +38,17 @@ type CounterContextType = {
   state: StateType;
   increment: () => void;
   decrement: () => void;
-  handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleTextInput: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 const initCounterContextState: CounterContextType = {
   state: initState,
   increment: () => {},
   decrement: () => {},
-  handleInputChange: (_e: ChangeEvent<HTMLInputElement>) => {},
+  handleTextInput: (_e: ChangeEvent<HTMLInputElement>) => {},
 };
 
-const CounterContext = createContext<CounterContextType>(
+export const CounterContext = createContext<CounterContextType>(
   initCounterContextState
 );
 
@@ -61,7 +61,7 @@ export const CounterProvider = ({ children }: ChildrenType) => {
 
   const increment = () => dispatch({ type: REDUCER_ACTION_TYPE.INCREMENT });
   const decrement = () => dispatch({ type: REDUCER_ACTION_TYPE.DECREMENT });
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) =>
+  const handleTextInput = (e: ChangeEvent<HTMLInputElement>) =>
     dispatch({
       type: REDUCER_ACTION_TYPE.NEW_INPUT,
       payload: e.target.value,
@@ -71,7 +71,7 @@ export const CounterProvider = ({ children }: ChildrenType) => {
     state,
     increment,
     decrement,
-    handleInputChange,
+    handleTextInput,
   };
 
   return (

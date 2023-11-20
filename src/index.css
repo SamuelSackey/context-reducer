@@ -28,3 +28,21 @@ button {
 .gold {
   color: gold;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.center-items {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+button {
+  font-size: 14px;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  width: 54px;
+}
