@@ -8,6 +8,12 @@ function App() {
 
   return (
     <>
+      <h1 className="text-center">
+        Context with useReducer for State Managements
+      </h1>
+
+      <br />
+
       <h3 className="text-center">Count is {count}</h3>
       <div className="center-items">
         <button onClick={decrement}>-</button>
@@ -16,7 +22,9 @@ function App() {
 
       <br />
 
-      <input type="text" onChange={handleTextInput} className="text-center" />
+      <div className="center-items">
+        <input type="text" onChange={handleTextInput} />
+      </div>
       <h4 className="text-center">{info}</h4>
     </>
   );
